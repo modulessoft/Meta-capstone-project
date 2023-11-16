@@ -1,11 +1,12 @@
 import React from "react";
+import logo from "../assets/icons_assets/Logo.svg";
 
 function Footer() {
   return (
     <footer>
       <ul>
         <li>
-          <img src="../assets/icons_assets/Logo.svg" alt="" />
+          <img src={logo} alt="" />
         </li>
       </ul>
       <ul>
