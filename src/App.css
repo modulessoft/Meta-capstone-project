@@ -1,0 +1,14 @@
+#root {
+  display: flex;
+  flex-direction: column;
+}
+Nav ul,
+Footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+}
+Footer ul {
+  list-style-type: none;
+}
