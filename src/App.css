@@ -20,12 +20,25 @@
   display: flex;
   flex-direction: column;
 }
+a {
+  color: black !important;
+  text-decoration: none;
+}
+a:hover {
+  color: #edefee !important;
+}
+a:active {
+  color: #275d2e !important;
+}
 Nav ul,
 Footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   list-style-type: none;
+}
+Nav ul {
+  align-items: center;
 }
 Footer ul {
   list-style-type: none;
