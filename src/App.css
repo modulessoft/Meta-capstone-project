@@ -122,6 +122,7 @@ Footer ul {
 }
 .specials a {
   align-items: flex-end;
+  display: flex;
 }
 .specials .icon {
   margin-left: 5px;
