@@ -129,6 +129,43 @@ Footer ul {
   width: 1rem;
   height: 1rem;
 }
+/* Testimonials */
+.testimonials {
+  background-color: #edefee;
+  padding: 12rem;
+}
+.testimonials .body {
+  display: flex;
+}
+.testimonials h2 {
+  text-align: center;
+}
+.testimonials .card {
+  background-color: white;
+  padding: 1rem;
+  margin-right: 1rem;
+  width: 30%;
+  border-radius: 14px;
+}
+.rating {
+  text-align: center;
+}
+.rating img {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+}
+.testimonials .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+}
+.person {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
 @media only screen and (max-width: 767px) {
   .hero {
     flex-direction: column;
@@ -145,5 +182,12 @@ Footer ul {
   .specials .card {
     width: 100%;
     margin-bottom: 2rem;
+  }
+  .testimonials .body {
+    flex-direction: column;
+  }
+  .testimonials .card {
+    width: 100%;
+    margin-top: 2rem;
   }
 }
