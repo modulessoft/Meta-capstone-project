@@ -6,13 +6,15 @@ import basket from "../../assets/icons_assets/Basket.svg";
 
 function Specials() {
   return (
-    <section className="specials">
+    <section className="specials" aria-label="Specials Section">
       <header>
         <h2>Specials</h2>
-        <button className="btn">Online Menu</button>
+        <button className="btn" aria-label="View Online Menu">
+          Online Menu
+        </button>
       </header>
       <div className="specials__body">
-        <div className="card">
+        <div className="card" aria-label="Greek Salad Special">
           <img src={greekSalad} alt="Greek Salad" />
           <div className="card-header">
             <h3>Greek Salad</h3>
@@ -24,13 +26,13 @@ function Specials() {
               Necessitatibus reiciendis asperiores quos qui tempore iste ipsum
               libero
             </p>
-            <a href="">
+            <a href="" aria-label="Order Greek Salad Delivery">
               Order a delivery
               <img src={basket} alt="basket" className="icon" />
             </a>
           </div>
         </div>
-        <div className="card">
+        <div className="card" aria-label="Bruchetta Special">
           <img src={bruchetta} alt="Bruchetta" />
           <div className="card-header">
             <h3>Bruchetta</h3>
@@ -41,13 +43,13 @@ function Specials() {
               Ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
               reiciendis asperiores quos qui tempore iste ipsum libero
             </p>
-            <a href="">
+            <a href="" aria-label="Order Bruchetta Delivery">
               Order a delivery
               <img src={basket} alt="basket" className="icon" />
             </a>
           </div>
         </div>
-        <div className="card">
+        <div className="card" aria-label="Lemon Dessert Special">
           <img src={lemonDessert} alt="Lemon Dessert" />
           <div className="card-header">
             <h3>Lemon Dessert</h3>
@@ -58,7 +60,7 @@ function Specials() {
               Dolor sit amet consectetur adipisicing elit. Necessitatibus
               reiciendis asperiores quos qui tempore iste ipsum libero
             </p>
-            <a href="">
+            <a href="" aria-label="Order Lemon Dessert Delivery">
               Order a delivery
               <img src={basket} alt="basket" className="icon" />
             </a>

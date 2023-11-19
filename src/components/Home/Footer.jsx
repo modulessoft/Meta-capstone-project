@@ -3,7 +3,7 @@ import logo from "../../assets/icons_assets/Logo.svg";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" aria-label="Footer Section">
       <ul>
         <li>
           <img src={logo} alt="" />
