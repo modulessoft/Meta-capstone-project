@@ -3,7 +3,7 @@ import logo from "../assets/icons_assets/Logo.svg";
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <ul>
         <li>
           <img src={logo} alt="" />

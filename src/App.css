@@ -34,7 +34,7 @@ a:active {
 section {
   margin-bottom: 8rem;
 }
-/* Navbar */
+/* Navbar and Footer */
 Nav ul,
 Footer {
   display: flex;
@@ -47,6 +47,12 @@ Nav ul {
 }
 Footer ul {
   list-style-type: none;
+}
+Footer {
+  background-color: #edefee;
+}
+Footer ul li:first-child {
+  margin-bottom: 1rem;
 }
 /* Hero */
 .hero {
@@ -235,5 +241,8 @@ Footer ul {
   .branches .overlay {
     margin: 0;
     top: 0;
+  }
+  Footer {
+    flex-direction: column;
   }
 }
