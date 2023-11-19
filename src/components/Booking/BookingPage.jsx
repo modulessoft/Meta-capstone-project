@@ -3,7 +3,7 @@ import BookingForm from "./BookingForm";
 import Header from "../Header/Header";
 import Nav from "../Header/Nav";
 
-function BookingPage() {
+function BookingPage({ availableTimes }) {
   return (
     <>
       <Header></Header>
@@ -12,7 +12,7 @@ function BookingPage() {
         <div className="booking-page-content">
           <h2>Reservation Form</h2>
           <p>Fill out the form below to make your reservation.</p>
-          <BookingForm />
+          <BookingForm availableTimes={availableTimes} />
         </div>
       </div>
     </>
