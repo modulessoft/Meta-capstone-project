@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function BookingForm({ availableTimes }) {
+function BookingForm({ availableTimes, dispatchAvailableTimes }) {
   const [date, setDate] = useState();
   const [time, setTime] = useState();
   const [guests, setGuests] = useState();
@@ -19,7 +19,7 @@ function BookingForm({ availableTimes }) {
       <select
         id="res-time"
         onChange={(e) => {
-          setTime(e.target.value);
+          dispatchAvailableTimes({ type: "INCREMENT" });
         }}
       >
         {availableTimes.map((time, key) => (

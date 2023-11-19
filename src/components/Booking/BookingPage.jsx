@@ -1,7 +1,11 @@
 import React from "react";
 import BookingForm from "./BookingForm";
 
-function BookingPage({ availableTimes, setBookingModal }) {
+function BookingPage({
+  availableTimes,
+  setBookingModal,
+  dispatchAvailableTimes,
+}) {
   return (
     <>
       <div className="booking-page-container">
@@ -20,7 +24,10 @@ function BookingPage({ availableTimes, setBookingModal }) {
           </button>
           <h2>Reservation Form</h2>
           <p>Fill out the form below to make your reservation.</p>
-          <BookingForm availableTimes={availableTimes} />
+          <BookingForm
+            availableTimes={availableTimes}
+            dispatchAvailableTimes={dispatchAvailableTimes}
+          />
         </div>
       </div>
     </>
