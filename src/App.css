@@ -166,6 +166,43 @@ Footer ul {
   justify-content: space-between;
   margin: 1rem 0;
 }
+/* Branches */
+.branches {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  color: white;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  align-items: center;
+  justify-content: space-around;
+}
+.branches div {
+  flex: 1;
+}
+.branches h1 {
+  color: black;
+  margin-bottom: 0;
+  font-size: 3rem;
+}
+.branches h4 {
+  margin-top: 0;
+  color: #333;
+}
+.branches p {
+  color: #333;
+}
+.branches img {
+  position: relative;
+  z-index: 1;
+  border-radius: 14px;
+}
+.branches .overlay {
+  margin-left: -100px;
+  top: 100px;
+  z-index: 0;
+}
 @media only screen and (max-width: 767px) {
   .hero {
     flex-direction: column;
@@ -189,5 +226,14 @@ Footer ul {
   .testimonials .card {
     width: 100%;
     margin-top: 2rem;
+  }
+  .branches {
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .branches .overlay {
+    margin: 0;
+    top: 0;
   }
 }
