@@ -2,7 +2,7 @@ import React from "react";
 
 function BookingForm() {
   return (
-    <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
+    <form className="booking-form">
       <label htmlFor="res-date">Choose date</label>
       <input type="date" id="res-date" />
       <label htmlFor="res-time">Choose time</label>
@@ -21,7 +21,7 @@ function BookingForm() {
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
-      <input type="submit" value="Make Your reservation" />
+      <input type="submit" value="Make Your reservation" className="btn" />
     </form>
   );
 }

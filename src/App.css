@@ -209,6 +209,52 @@ Footer ul li:first-child {
   top: 100px;
   z-index: 0;
 }
+/* Booking Page */
+.booking-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.booking-page-content {
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.booking-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form label {
+  font-weight: bold;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  box-sizing: border-box;
+  border-radius: 14px;
+}
+
+.booking-form input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 767px) {
   .hero {
     flex-direction: column;
