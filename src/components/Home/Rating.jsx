@@ -1,6 +1,6 @@
 import React from "react";
-import hollowStar from "../assets/stars/hollow-star.svg";
-import yellowStar from "../assets/stars/yellow-star.svg";
+import hollowStar from "../../assets/stars/hollow-star.svg";
+import yellowStar from "../../assets/stars/yellow-star.svg";
 
 function Rating({ rate }) {
   const left = 5 - rate;

@@ -1,9 +1,8 @@
 import React from "react";
-import imageA from "../assets/icons_assets/Mario and Adrian A.jpg";
-import imageB from "../assets/icons_assets/Mario and Adrian b.jpg";
-function Branches() {
+import image from "../../assets/icons_assets/restaurant.jpg";
+function Hero() {
   return (
-    <section className="branches">
+    <section className="hero">
       <div className="px-2 mb-2">
         <h1>Little Lemon</h1>
         <h4>Chicago</h4>
@@ -13,13 +12,13 @@ function Branches() {
           tenetur dolores sequi assumenda quaerat molestiae hic similique
           aperiam! Ipsam, ratione.
         </p>
+        <button className="btn">Reserve a Table</button>
       </div>
       <div className="px-2">
-        <img src={imageB} alt="restaurant" width="50%" />
-        <img src={imageA} alt="restaurant" width="50%" className="overlay" />
+        <img src={image} alt="restaurant" width="100%" />
       </div>
     </section>
   );
 }
 
-export default Branches;
+export default Hero;

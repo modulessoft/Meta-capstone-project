@@ -1,8 +1,8 @@
 import React from "react";
-import greekSalad from "../assets/icons_assets/greek salad.jpg";
-import bruchetta from "../assets/icons_assets/bruchetta.svg";
-import lemonDessert from "../assets/icons_assets/lemon dessert.jpg";
-import basket from "../assets/icons_assets/Basket.svg";
+import greekSalad from "../../assets/icons_assets/greek salad.jpg";
+import bruchetta from "../../assets/icons_assets/bruchetta.svg";
+import lemonDessert from "../../assets/icons_assets/lemon dessert.jpg";
+import basket from "../../assets/icons_assets/Basket.svg";
 
 function Specials() {
   return (

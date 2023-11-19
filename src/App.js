@@ -1,17 +1,30 @@
-import Header from "./components/Header";
-import Nav from "./components/Nav";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home/index";
+import BookingPage from "./components/Booking/BookingPage";
 import "./App.css";
 
 function App() {
   return (
-    <>
-      <Header></Header>
-      <Nav></Nav>
-      <Main></Main>
-      <Footer></Footer>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route index element={<Home />} />
+          <Route path="booking" element={<BookingPage />} />
+          <Route
+            path="*"
+            element={
+              <div style={{ textAlign: "center", padding: "50px" }}>
+                <h1 style={{ color: "#dc3545" }}>404 - Page Not Found</h1>
+                <p>
+                  Sorry, the page you are looking for might be in another
+                  castle.
+                </p>
+              </div>
+            }
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
