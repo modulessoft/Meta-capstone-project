@@ -18,10 +18,13 @@ function Main() {
   return (
     <>
       {bookingModal ? (
-        <BookingPage availableTimes={availableTimes}> </BookingPage>
+        <BookingPage
+          availableTimes={availableTimes}
+          setBookingModal={setBookingModal}
+        ></BookingPage>
       ) : (
         <>
-          <Hero></Hero>
+          <Hero setBookingModal={setBookingModal}></Hero>
           <Specials></Specials>
           <Testimonials></Testimonials>
           <Branches></Branches>
