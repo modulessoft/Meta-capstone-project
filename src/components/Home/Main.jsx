@@ -7,14 +7,19 @@ import { useState } from "react";
 import BookingPage from "../Booking/BookingPage";
 function Main() {
   const [bookingModal, setBookingModal] = useState(false);
+  const [date, setDate] = useState();
+  const [time, setTime] = useState();
+  const [guests, setGuests] = useState();
+  const [occasion, setOccasion] = useState();
+
   const [availableTimes, dispatchAvailableTimes] = useReducer(
     updateTimes,
     initializeTimes()
   );
   function updateTimes(state, action) {
     switch (action.type) {
-      case "INCREMENT":
-        return { availableTimes: state.availableTimes + 1 };
+      case "SET":
+        return { availableTimes: action.payload };
       default:
         return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
     }
@@ -22,7 +27,6 @@ function Main() {
   function initializeTimes() {
     return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
   }
-  initializeTimes();
   return (
     <>
       {bookingModal ? (

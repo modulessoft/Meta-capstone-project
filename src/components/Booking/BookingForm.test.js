@@ -5,5 +5,5 @@ test("Renders the BookingForm heading", () => {
   const { getByText } = render(
     <BookingForm availableTimes={["10:00"]} dispatchAvailableTimes={() => {}} />
   );
-  expect(getByText("Reservation Form")).toBeInTheDocument();
+  expect(getByText("Choose date")).toBeInTheDocument();
 });

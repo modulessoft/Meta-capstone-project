@@ -8,8 +8,6 @@ function BookingForm({ availableTimes, dispatchAvailableTimes }) {
 
   return (
     <form className="booking-form" aria-labelledby="booking-form-heading">
-      <h2 id="booking-form-heading">Reservation Form</h2>
-
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
@@ -24,7 +22,7 @@ function BookingForm({ availableTimes, dispatchAvailableTimes }) {
       <select
         id="res-time"
         onChange={(e) => {
-          dispatchAvailableTimes({ type: "INCREMENT" });
+          dispatchAvailableTimes({ type: "SET", payload: e.target.value });
         }}
         aria-label="Choose time"
       >
