@@ -25,6 +25,11 @@ function Main() {
     [],
     initializeTimes
   );
+
+  const submitData = (formData) => {
+    const response = submitAPI(formData);
+    if (response) setBookingModal(false);
+  };
   return (
     <>
       {bookingModal ? (
@@ -32,7 +37,7 @@ function Main() {
           dispatchAvailableTimes={dispatchAvailableTimes}
           availableTimes={availableTimes}
           setBookingModal={setBookingModal}
-          submitAPI={submitAPI}
+          submitData={submitData}
         ></BookingPage>
       ) : (
         <>

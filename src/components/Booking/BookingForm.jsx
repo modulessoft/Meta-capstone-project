@@ -1,13 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-function BookingForm({ availableTimes, dispatchAvailableTimes }) {
+function BookingForm({ availableTimes, dispatchAvailableTimes, submitData }) {
   const [date, setDate] = useState();
   const [time, setTime] = useState();
-  const [guests, setGuests] = useState();
+  const [numberOfGuests, setNumberOfGuests] = useState();
   const [occasion, setOccasion] = useState();
-
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    submitData({ date, time, numberOfGuests, occasion });
+  };
   return (
-    <form className="booking-form" aria-labelledby="booking-form-heading">
+    <form
+      onSubmit={handleFormSubmit}
+      className="booking-form"
+      aria-labelledby="booking-form-heading"
+    >
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
@@ -39,7 +46,7 @@ function BookingForm({ availableTimes, dispatchAvailableTimes }) {
         max="10"
         id="guests"
         onChange={(e) => {
-          setGuests(e.target.value);
+          setNumberOfGuests(e.target.value);
         }}
         aria-label="Number of guests"
       />

@@ -5,6 +5,7 @@ function BookingPage({
   availableTimes,
   setBookingModal,
   dispatchAvailableTimes,
+  submitData,
 }) {
   return (
     <>
@@ -27,6 +28,7 @@ function BookingPage({
           <BookingForm
             availableTimes={availableTimes}
             dispatchAvailableTimes={dispatchAvailableTimes}
+            submitData={submitData}
           />
         </div>
       </div>
