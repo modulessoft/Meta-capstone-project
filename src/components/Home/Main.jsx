@@ -6,8 +6,10 @@ import Branches from "./Branches";
 import { useState } from "react";
 import BookingPage from "../Booking/BookingPage";
 import { fetchAPI, submitAPI } from "../../assets/mockAPI";
+import { useNavigate } from "react-router-dom";
 
 function Main() {
+  const navigate = useNavigate();
   const [bookingModal, setBookingModal] = useState(false);
 
   const updateTimes = (availableTimes, date) => {
@@ -28,7 +30,10 @@ function Main() {
 
   const submitData = (formData) => {
     const response = submitAPI(formData);
-    if (response) setBookingModal(false);
+    if (response) {
+      setBookingModal(false);
+      navigate("/confirmed-booking");
+    }
   };
   return (
     <>
