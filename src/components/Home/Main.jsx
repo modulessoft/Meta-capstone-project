@@ -1,32 +1,30 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import Hero from "./Hero";
 import Specials from "./Specials";
 import Testimonials from "./Testimonials";
 import Branches from "./Branches";
 import { useState } from "react";
 import BookingPage from "../Booking/BookingPage";
+import { fetchAPI, submitAPI } from "../../assets/mockAPI";
+
 function Main() {
   const [bookingModal, setBookingModal] = useState(false);
-  const [date, setDate] = useState();
-  const [time, setTime] = useState();
-  const [guests, setGuests] = useState();
-  const [occasion, setOccasion] = useState();
+
+  const updateTimes = (availableTimes, date) => {
+    const response = fetchAPI(new Date(date));
+    return response.length !== 0 ? response : availableTimes;
+  };
+
+  const initializeTimes = (initialAvailableTimes) => [
+    ...initialAvailableTimes,
+    ...fetchAPI(new Date()),
+  ];
 
   const [availableTimes, dispatchAvailableTimes] = useReducer(
     updateTimes,
-    initializeTimes()
+    [],
+    initializeTimes
   );
-  function updateTimes(state, action) {
-    switch (action.type) {
-      case "SET":
-        return { availableTimes: action.payload };
-      default:
-        return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-    }
-  }
-  function initializeTimes() {
-    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-  }
   return (
     <>
       {bookingModal ? (
@@ -34,6 +32,7 @@ function Main() {
           dispatchAvailableTimes={dispatchAvailableTimes}
           availableTimes={availableTimes}
           setBookingModal={setBookingModal}
+          submitAPI={submitAPI}
         ></BookingPage>
       ) : (
         <>
@@ -46,5 +45,4 @@ function Main() {
     </>
   );
 }
-
 export default Main;

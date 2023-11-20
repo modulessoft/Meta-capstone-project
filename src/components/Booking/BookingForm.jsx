@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function BookingForm({ availableTimes, dispatchAvailableTimes }) {
   const [date, setDate] = useState();
@@ -13,6 +13,7 @@ function BookingForm({ availableTimes, dispatchAvailableTimes }) {
         type="date"
         id="res-date"
         onChange={(e) => {
+          dispatchAvailableTimes(e.target.value);
           setDate(e.target.value);
         }}
         aria-label="Choose date"
@@ -22,13 +23,12 @@ function BookingForm({ availableTimes, dispatchAvailableTimes }) {
       <select
         id="res-time"
         onChange={(e) => {
-          dispatchAvailableTimes({ type: "SET", payload: e.target.value });
+          setTime(e.target.value);
         }}
         aria-label="Choose time"
       >
-        {availableTimes.map((time, key) => (
-          <option key={key}>{time}</option>
-        ))}
+        {availableTimes[0] &&
+          availableTimes.map((time, key) => <option key={key}>{time}</option>)}
       </select>
 
       <label htmlFor="guests">Number of guests</label>
