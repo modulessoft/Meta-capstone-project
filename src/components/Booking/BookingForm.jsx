@@ -92,7 +92,7 @@ function BookingForm({ availableTimes, dispatchAvailableTimes, submitData }) {
           }}
           aria-label="Choose time"
         >
-          {availableTimes[0] &&
+          {availableTimes.length > 0 &&
             availableTimes.map((time, key) => (
               <option key={key}>{time}</option>
             ))}
