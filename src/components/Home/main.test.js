@@ -26,11 +26,11 @@ test("Should update available booking time options when changing booking date", 
   const btn = screen.getByText("Reserve a Table");
   fireEvent.click(btn);
   // get initial value
-  const initialOptions = await screen.getByLabelText("Choose time");
+  const initialOptions = (await screen.getByLabelText("Choose time")).length;
   const dateInput = await screen.getByLabelText("Choose date");
   fireEvent.change(dateInput, { target: { value: exampleDate } });
   fireEvent.blur(dateInput);
   expect(dateInput).toHaveValue(exampleDate);
-  const newOptions = await screen.getByLabelText("Choose time");
-  expect(initialOptions.length).not.toEqual(newOptions.length);
+  const newOptions = (await screen.getByLabelText("Choose time")).length;
+  expect(initialOptions).not.toEqual(newOptions);
 });
