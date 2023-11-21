@@ -10,6 +10,10 @@
 .btn:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
+.disabled {
+  cursor: not-allowed !important;
+  background-color: grey !important;
+}
 .mb-2 {
   margin-bottom: 2rem;
 }
