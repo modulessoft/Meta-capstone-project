@@ -1,11 +1,28 @@
-import React from "react";
+// Nav.js
+
+import React, { useState } from "react";
 import logo from "../../assets/icons_assets/Logo.svg";
+
 function Nav() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav>
-      <ul>
+      <div
+        className={`menu-icon ${isMenuOpen ? "open" : ""}`}
+        onClick={toggleMenu}
+      >
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+      <ul className={`nav-list ${isMenuOpen ? "open" : ""}`}>
         <li>
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" className="logo" />
         </li>
         <li>
           <a href="/">Home</a>
