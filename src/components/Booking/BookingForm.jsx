@@ -12,15 +12,16 @@ function BookingForm({ availableTimes, dispatchAvailableTimes, submitData }) {
   }
   const isValidTimeFormat = (timeString) => {
     const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/; // HH:MM format
-
     return timeRegex.test(timeString);
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (validateForm({ date, time, numberOfGuests, occasion }))
+    if (validateForm({ date, time, numberOfGuests, occasion })) {
       submitData({ date, time, numberOfGuests, occasion });
+    }
   };
   const validateForm = (form) => {
+    let errorCounter = 0;
     setErrors((prevErrors) =>
       prevErrors.filter(function (e) {
         return (
@@ -30,33 +31,38 @@ function BookingForm({ availableTimes, dispatchAvailableTimes, submitData }) {
         );
       })
     );
-    if (form.numberOfGuests < 1) {
+    if (!form.numberOfGuests || form.numberOfGuests < 1) {
+      errorCounter++;
       setErrors((prevErrors) => [
         ...prevErrors,
         "Please add more than 0 guests",
       ]);
-      return false;
     }
     if (!isValidTimeFormat(form.time)) {
+      errorCounter++;
       setErrors((prevErrors) => [...prevErrors, "Please add a correct time"]);
-      return false;
     }
     if (!isValidDateFormat(form.date)) {
+      errorCounter++;
       setErrors((prevErrors) => [...prevErrors, "Please add a correct date"]);
-      return false;
     }
-    return true;
+    if (errorCounter > 0) {
+      return false;
+    } else {
+      return true;
+    }
   };
   useEffect(() => {
-    if (date || time || numberOfGuests || occasion)
+    if (date || time || numberOfGuests || occasion) {
       validateForm({ date, time, numberOfGuests, occasion });
+    }
   }, [date, time, numberOfGuests, occasion]);
   return (
     <>
-      {errors[0] && (
+      {errors && (
         <ul>
           {errors.map((error, index) => (
-            <li key={index} style={{ color: "red" }}>
+            <li key={index} style={{ color: "red" }} role="alert">
               {error}
             </li>
           ))}
@@ -94,8 +100,8 @@ function BookingForm({ availableTimes, dispatchAvailableTimes, submitData }) {
         <label htmlFor="guests">Number of guests</label>
         <input
           type="number"
-          placeholder="1"
           id="guests"
+          placeholder="1"
           onChange={(e) => {
             setNumberOfGuests(e.target.value);
           }}
@@ -117,7 +123,7 @@ function BookingForm({ availableTimes, dispatchAvailableTimes, submitData }) {
         <input
           type="submit"
           value="Make Your reservation"
-          className={`btn ${errors[0] && "disabled"}`}
+          className={`btn ${errors.length > 0 && "disabled"}`}
           aria-label="Make Your reservation"
         />
       </form>
