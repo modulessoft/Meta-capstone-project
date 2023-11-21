@@ -276,7 +276,9 @@ Footer ul li:first-child {
     display: block; /* Show the hamburger icon for smaller screens */
     margin: 1rem;
   }
-
+  Nav li {
+    padding-bottom: 1rem;
+  }
   .nav-list {
     flex-direction: column; /* Stack items vertically on small screens */
     text-align: center;
