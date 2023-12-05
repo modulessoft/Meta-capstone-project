@@ -30,6 +30,4 @@ This capstone project is a restaurant booking web application developed using Re
 
 ## Badge
 
-<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="edd00f17-d929-4707-ada3-95ffc1236d93" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-
 [Credly - Verified Digital Credentials](https://www.credly.com/badges/edd00f17-d929-4707-ada3-95ffc1236d93/public_url)
