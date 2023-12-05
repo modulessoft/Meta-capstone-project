@@ -23,3 +23,7 @@ This capstone project is a restaurant booking web application developed using Re
 - React
 - React Router
 - React Testing Library
+
+## Certificate
+
+![Certificate](https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~EGWEB8ZTZE4H/CERTIFICATE_LANDING_PAGE~EGWEB8ZTZE4H.jpeg)
